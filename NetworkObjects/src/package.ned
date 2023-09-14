@@ -1,3 +1,0 @@
-package networkobjects;
-
-@license(LGPL);

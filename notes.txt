@@ -1,4 +1,0 @@
-9/12/2023
--finished simulation for lab 1
--try the simulation again and look for the general.anf file under results
--read the end of the lab for details

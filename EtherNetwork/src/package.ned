@@ -1,3 +1,0 @@
-package ethernetwork;
-
-@license(LGPL);
