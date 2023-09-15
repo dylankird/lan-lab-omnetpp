@@ -1,8 +1,8 @@
 version 3
-run General-0-20230913-18:21:47-10816
+run General-0-20230914-21:40:01-81926
 attr configname General
-attr datetime 20230913-18:21:47
-attr datetimef 20230913-182147
+attr datetime 20230914-21:40:01
+attr datetimef 20230914-214001
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,13 +10,13 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network EtherNetwork
-attr processid 10816
+attr processid 81926
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-config image-path ../../../../omnet/inet4.5/images
+config image-path ../../inet4.5/images
 config network EtherNetwork
 config sim-time-limit 10s
 config **.client.numApps 1
