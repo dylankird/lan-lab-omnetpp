@@ -2,3 +2,17 @@
 -finished simulation for lab 1
 -try the simulation again and look for the general.anf file under results
 -read the end of the lab for details
+
+9/13/2023
+-Resimulated lab 1
+-tried to look at the results but couldn't figure out how to get anything useful out of it
+-started lab 2
+
+9/14/2023
+-Got everything working with git, set up omnet on all computers
+
+!!!!!!!!!!!   How to use git properly    !!!!!!!!!!!!!!!!!!!
+-Before you open omnet, do a git pull
+-Do your thing in omnet
+-do a git commit and push
+-Do this every time or you will have problems!!
