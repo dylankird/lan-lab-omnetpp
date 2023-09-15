@@ -1,8 +1,8 @@
 version 3
-run General-0-20230914-21:57:56-115532
+run General-0-20230914-22:06:02-87995
 attr configname General
-attr datetime 20230914-21:57:56
-attr datetimef 20230914-215756
+attr datetime 20230914-22:06:02
+attr datetimef 20230914-220602
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network EtherNetwork
-attr processid 115532
+attr processid 87995
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,7 +18,7 @@ attr runnumber 0
 attr seedset 0
 config image-path ../../inet4.5/images
 config network EtherNetwork
-config sim-time-limit 15s
+config sim-time-limit 10s
 config **.client.numApps 1
 config **.client.app[0].typename TcpSessionApp
 config **.client.app[0].connectAddress "\"server\""
@@ -186,7 +186,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar EtherNetwork.server.eth[0].queue queueLength:timeavg 0.083480767501657
+scalar EtherNetwork.server.eth[0].queue queueLength:timeavg 0.12985900160897
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -207,7 +207,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar EtherNetwork.server.eth[0].queue queueBitLength:timeavg 218.3263741483
+scalar EtherNetwork.server.eth[0].queue queueBitLength:timeavg 339.61888253174
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -515,14 +515,14 @@ par EtherNetwork.server.eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par EtherNetwork.server.eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar EtherNetwork.server.eth[0].mac "simulated time" 15
+scalar EtherNetwork.server.eth[0].mac "simulated time" 10
 scalar EtherNetwork.server.eth[0].mac full-duplex 1
-scalar EtherNetwork.server.eth[0].mac "frames/sec sent" 249.06666666667
-scalar EtherNetwork.server.eth[0].mac "frames/sec rcvd" 249.13333333333
-scalar EtherNetwork.server.eth[0].mac "bits/sec sent" 654884.26666667
-scalar EtherNetwork.server.eth[0].mac "bits/sec rcvd" 654918.4
-scalar EtherNetwork.server.eth[0].mac "rx channel idle (%)" 99.329137066667
-scalar EtherNetwork.server.eth[0].mac "rx channel utilization (%)" 0.67086293333333
+scalar EtherNetwork.server.eth[0].mac "frames/sec sent" 373.6
+scalar EtherNetwork.server.eth[0].mac "frames/sec rcvd" 373.7
+scalar EtherNetwork.server.eth[0].mac "bits/sec sent" 982326.4
+scalar EtherNetwork.server.eth[0].mac "bits/sec rcvd" 982377.6
+scalar EtherNetwork.server.eth[0].mac "rx channel idle (%)" 98.9937056
+scalar EtherNetwork.server.eth[0].mac "rx channel utilization (%)" 1.0062944
 scalar EtherNetwork.server.eth[0].mac rxPausePkUnits:count 0
 attr interpolationmode none
 attr recordingmode count
@@ -1224,7 +1224,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
 attr title "queue length, max"
 attr unit pk
-scalar EtherNetwork.client.eth[0].queue queueLength:timeavg 0.10916340142858
+scalar EtherNetwork.client.eth[0].queue queueLength:timeavg 0.16980973555557
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1245,7 +1245,7 @@ attr recordingmode max
 attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
 attr title "queue bit length, max"
 attr unit b
-scalar EtherNetwork.client.eth[0].queue queueBitLength:timeavg 285.66046082285
+scalar EtherNetwork.client.eth[0].queue queueBitLength:timeavg 444.36071683555
 attr autoWarmupFilter false
 attr interpolationmode sample-hold
 attr recordingmode timeavg
@@ -1565,14 +1565,14 @@ par EtherNetwork.client.eth[0].mac stopOperationExtraTime -1s
 attr unit s
 par EtherNetwork.client.eth[0].mac stopOperationTimeout 2s
 attr unit s
-scalar EtherNetwork.client.eth[0].mac "simulated time" 15
+scalar EtherNetwork.client.eth[0].mac "simulated time" 10
 scalar EtherNetwork.client.eth[0].mac full-duplex 1
-scalar EtherNetwork.client.eth[0].mac "frames/sec sent" 249.13333333333
-scalar EtherNetwork.client.eth[0].mac "frames/sec rcvd" 249.06666666667
-scalar EtherNetwork.client.eth[0].mac "bits/sec sent" 654918.4
-scalar EtherNetwork.client.eth[0].mac "bits/sec rcvd" 654884.26666667
-scalar EtherNetwork.client.eth[0].mac "rx channel idle (%)" 99.329175466667
-scalar EtherNetwork.client.eth[0].mac "rx channel utilization (%)" 0.67082453333333
+scalar EtherNetwork.client.eth[0].mac "frames/sec sent" 373.7
+scalar EtherNetwork.client.eth[0].mac "frames/sec rcvd" 373.6
+scalar EtherNetwork.client.eth[0].mac "bits/sec sent" 982377.6
+scalar EtherNetwork.client.eth[0].mac "bits/sec rcvd" 982326.4
+scalar EtherNetwork.client.eth[0].mac "rx channel idle (%)" 98.9937632
+scalar EtherNetwork.client.eth[0].mac "rx channel utilization (%)" 1.0062368
 scalar EtherNetwork.client.eth[0].mac rxPausePkUnits:count 0
 attr interpolationmode none
 attr recordingmode count
