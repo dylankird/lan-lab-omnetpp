@@ -1,0 +1,27 @@
+version 3
+run General-0-20230917-01:48:00-40552
+attr configname General
+attr datetime 20230917-01:48:00
+attr datetimef 20230917-014800
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ComputerNetwork
+attr processid 40552
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network ComputerNetwork
+config record-eventlog true
+config sim-time-limit 600s
+config simtime-resolution ps
+
+par ComputerNetwork.Computer_A typename "\"networkobjects.Computer\""
+par ComputerNetwork.Computer_B typename "\"networkobjects.Computer\""
+par ComputerNetwork typename "\"networkobjects.simulations.ComputerNetwork\""
+
