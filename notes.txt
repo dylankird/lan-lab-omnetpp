@@ -16,3 +16,12 @@
 -Do your thing in omnet
 -do a git commit and push
 -Do this every time or you will have problems!!
+
+9/16/2023
+-I am having an issue with project 2, it does not compile and simulate even though I did everything in the lab
+-Now it works and I have absolutely no idea what I did to make it work. I just followed the directions and checked everything and this time it began compiling.
+-Never mind, it just started compiling because I included inet4.5 in the project
+
+I think I fixed it!! I changed "import NetworkObjects.computer" to "import networkobjects.Computer;" in the ComputerNetwork.ned file and the error is gone!
+
+The simulation completely worked after making that change

@@ -14,12 +14,12 @@
 // 
 
 package networkobjects;
-
+//package NetworkObjects.computer;
 //
 // TODO auto-generated module
 //
 simple Computer
 {
     gates:
-        inout port;
+    	inout port;
 }
