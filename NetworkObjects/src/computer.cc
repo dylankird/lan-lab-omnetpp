@@ -12,5 +12,4 @@ void Computer::handleMessage(cMessage *msg)
 {
     EV << "Message Received";
     cMessage *answer = new cMessage();
-    sendDelayed(answer, uniform(10,60), "port$o");
-}
+    sendDelayed(answer, unif
