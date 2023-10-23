@@ -1,9 +1,9 @@
-file 1361 1697000725                                            
+file 2471 1698086885                                            
 version 3
-run General-0-20231011-01:04:18-10399
+run General-0-20231023-14:47:09-24000
 attr configname General
-attr datetime 20231011-01:04:18
-attr datetimef 20231011-010418
+attr datetime 20231023-14:47:09
+attr datetimef 20231023-144709
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -11,17 +11,17 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Network
-attr processid 10399
+attr processid 24000
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 config network Network
-config sim-time-limit 1h
-config **.numJobs 10
-config **.source.interArrivalTime 1s
-config **.queue.serviceTime 2s
+config sim-time-limit 5h
+config **.numJobs 20
+config **.source.interArrivalTime uniform(1s,5s)
+config **.queue.serviceTime uniform(1s,10s)
 
 vector 0 Network.queue queueLength:vector ETV
 attr interpolationmode sample-hold
@@ -32,6 +32,6 @@ attr interpolationmode none
 attr recordingmode vector
 attr title "lifetime of arrived jobs"
 attr unit s
-0	824 299 0 38 0 19.000001 19 0 5 41 129
-1	1123 237 8 41 3.000002 21.000002 10 2.000002 11.000002 65.00002 505.00026000004
+0	849 880 0 78 0 126.314475940998 39 0 10 169 1023
+1	1729 741 6 81 10.631960293961 136.122042027054 20 7.436706284744 71.832445304592 680.60602500956 30070.050502777
 

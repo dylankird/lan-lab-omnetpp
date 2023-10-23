@@ -1,8 +1,8 @@
 version 3
-run General-0-20231011-01:04:18-10399
+run General-0-20231023-14:47:09-24000
 attr configname General
-attr datetime 20231011-01:04:18
-attr datetimef 20231011-010418
+attr datetime 20231023-14:47:09
+attr datetimef 20231023-144709
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,17 +10,17 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Network
-attr processid 10399
+attr processid 24000
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 config network Network
-config sim-time-limit 1h
-config **.numJobs 10
-config **.source.interArrivalTime 1s
-config **.queue.serviceTime 2s
+config sim-time-limit 5h
+config **.numJobs 20
+config **.source.interArrivalTime uniform(1s,5s)
+config **.queue.serviceTime uniform(1s,10s)
 
 par Network.source.out.channel typename "\"ned.DatarateChannel\""
 par Network.source.out.channel disabled false
@@ -49,17 +49,17 @@ attr mutable ""
 par Network.queue.out.channel per 0
 attr mutable ""
 par Network.source typename "\"org.omnetpp.queueing.Source\""
-par Network.source numJobs 10
-par Network.source interArrivalTime 1s
+par Network.source numJobs 20
+par Network.source interArrivalTime "uniform(1s, 5s)"
 attr unit s
 par Network.source jobName "\"job\""
 par Network.source jobType 0
 par Network.source jobPriority 0
-par Network.source startTime 1s
+par Network.source startTime 3.19525s
 attr unit s
 par Network.source stopTime -1s
 attr unit s
-scalar Network.source created:last 10
+scalar Network.source created:last 20
 attr interpolationmode none
 attr recordingmode last
 attr title "the number of jobs created, last"
@@ -81,7 +81,7 @@ scalar Network.sink delaysVisited:max 0
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of delays visited by arrived jobs, max"
-scalar Network.sink queuesVisited:mean 0.9
+scalar Network.sink queuesVisited:mean 0.95
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total number of queues visited by arrived jobs, mean"
@@ -89,12 +89,12 @@ scalar Network.sink queuesVisited:max 1
 attr interpolationmode none
 attr recordingmode max
 attr title "the total number of queues visited by arrived jobs, max"
-scalar Network.sink totalServiceTime:mean 2
+scalar Network.sink totalServiceTime:mean 6.6463393008918
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent  by arrived jobs, mean"
 attr unit s
-scalar Network.sink totalServiceTime:max 2
+scalar Network.sink totalServiceTime:max 9.807565086056
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent  by arrived jobs, max"
@@ -109,22 +109,22 @@ attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in delay nodes by arrived jobs, max"
 attr unit s
-scalar Network.sink totalQueueingTime:mean 4.5
+scalar Network.sink totalQueueingTime:mean 27.383959949586
 attr interpolationmode none
 attr recordingmode mean
 attr title "the total time spent in queues by arrived jobs, mean"
 attr unit s
-scalar Network.sink totalQueueingTime:max 9
+scalar Network.sink totalQueueingTime:max 62.024878218536
 attr interpolationmode none
 attr recordingmode max
 attr title "the total time spent in queues by arrived jobs, max"
 attr unit s
-scalar Network.sink lifeTime:mean 6.500002
+scalar Network.sink lifeTime:mean 34.030301250478
 attr interpolationmode none
 attr recordingmode mean
 attr title "lifetime of arrived jobs, mean"
 attr unit s
-scalar Network.sink lifeTime:max 11.000002
+scalar Network.sink lifeTime:max 71.832445304592
 attr interpolationmode none
 attr recordingmode max
 attr title "lifetime of arrived jobs, max"
@@ -132,27 +132,27 @@ attr unit s
 par Network.queue typename "\"org.omnetpp.queueing.Queue\""
 par Network.queue capacity -1
 par Network.queue fifo true
-par Network.queue serviceTime 2s
+par Network.queue serviceTime "uniform(1s, 10s)"
 attr unit s
-scalar Network.queue busy:timeavg 0.0055555555555556
+scalar Network.queue busy:timeavg 0.0073848214454354
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "server busy state, timeavg"
-scalar Network.queue queueingTime:mean 4.5
+scalar Network.queue queueingTime:mean 27.383959949586
 attr interpolationmode none
 attr recordingmode mean
 attr title "queueing time at dequeue, mean"
 attr unit s
-scalar Network.queue queueingTime:max 9
+scalar Network.queue queueingTime:max 62.024878218536
 attr interpolationmode none
 attr recordingmode max
 attr title "queueing time at dequeue, max"
 attr unit s
-scalar Network.queue queueLength:timeavg 0.0125
+scalar Network.queue queueLength:timeavg 0.030426622166207
 attr interpolationmode sample-hold
 attr recordingmode timeavg
 attr title "queue length, timeavg"
-scalar Network.queue queueLength:max 5
+scalar Network.queue queueLength:max 10
 attr interpolationmode sample-hold
 attr recordingmode max
 attr title "queue length, max"
