@@ -1,0 +1,90 @@
+file 11356 1698088319                                           
+version 3
+run MarkovScheduler-0-20231023-15:10:20-25711
+attr configname MarkovScheduler
+attr datetime 20231023-15:10:20
+attr datetimef 20231023-151020
+attr experiment MarkovScheduler
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MarkovSchedulerTutorialStep
+attr processid 25711
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet4.5/images
+config network MarkovSchedulerTutorialStep
+config sim-time-limit 100s
+config *.provider*.packetLength 1B
+config *.collector*.collectionInterval "uniform(0s, 2s)"
+config *.scheduler.transitionProbabilities "\"0 1 1 0\""
+config *.scheduler.waitIntervals "\"40 4\""
+
+vector 0 MarkovSchedulerTutorialStep.provider1 packetLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "packet lengths"
+attr unit b
+vector 1 MarkovSchedulerTutorialStep.scheduler packetLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "packet lengths"
+attr unit b
+vector 2 MarkovSchedulerTutorialStep.collector packetLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "packet lengths"
+attr unit b
+vector 3 MarkovSchedulerTutorialStep.collector droppedPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetDropped)
+attr title "dropped packet lengths"
+attr unit b
+vector 4 MarkovSchedulerTutorialStep.collector meanBitLifeTimePerPacket:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled)))
+attr title "mean bit life time per packet"
+attr unit s
+vector 5 MarkovSchedulerTutorialStep.collector packetJitter:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source jitter(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled))))
+attr title "packet jitter"
+attr unit s
+vector 6 MarkovSchedulerTutorialStep.collector packetDelayDifferenceToMean:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source differenceToMean(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled))))
+attr title "packet delay difference to mean"
+attr unit s
+vector 7 MarkovSchedulerTutorialStep.collector packetDelayVariation:vector ETV
+attr recordingmode vector
+attr source stddev(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled))))
+attr title "packet delay variation"
+attr unit s
+vector 8 MarkovSchedulerTutorialStep.provider2 packetLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "packet lengths"
+attr unit b
+0	2891 977 0 51 0 54.177003364079 44 8 8 352 2816
+1	3868 1069 0 51 0 54.177003364079 48 8 8 384 3072
+2	4937 1069 0 51 0 54.177003364079 48 8 8 384 3072
+3	6006 1069 0 51 0 54.177003364079 48 8 8 384 3072
+4	7075 1047 2 51 0 53.94045451656 47 0 0 0 0
+5	8122 1047 2 51 0 53.94045451656 47 0 0 0 0
+6	9169 1047 2 51 0 53.94045451656 47 0 0 0 0
+7	10216 1047 2 51 0 53.94045451656 47 0 0 0 0
+8	11263 92 38 42 40.139447745402 43.900348092895 4 8 8 32 256
+
