@@ -1,0 +1,193 @@
+file 27444921 1698867167                                        
+version 3
+run DropTailQueue-0-20231101-15:32:37-36950
+attr configname DropTailQueue
+attr datetime 20231101-15:32:37
+attr datetimef 20231101-153237
+attr experiment DropTailQueue
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network DropTailQueueTutorialStep
+attr processid 36950
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet4.5/images
+config network DropTailQueueTutorialStep
+config sim-time-limit 24h
+config *.producer.numJobs 20
+config *.producer.packetLength 1B
+config *.producer.productionInterval exponential(1s)
+config *.queue.packetCapacity 4
+config *.collector.collectionInterval exponential(1s)
+
+vector 0 DropTailQueueTutorialStep.producer packetLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushed)
+attr title "packet lengths"
+attr unit b
+vector 1 DropTailQueueTutorialStep.queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 2 DropTailQueueTutorialStep.queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 3 DropTailQueueTutorialStep.queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 4 DropTailQueueTutorialStep.collector packetLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "packet lengths"
+attr unit b
+vector 5 DropTailQueueTutorialStep.collector droppedPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetDropped)
+attr title "dropped packet lengths"
+attr unit b
+vector 6 DropTailQueueTutorialStep.queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 7 DropTailQueueTutorialStep.queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 8 DropTailQueueTutorialStep.producer dataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushed)
+attr title "data rate"
+attr unit bps
+vector 9 DropTailQueueTutorialStep.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 10 DropTailQueueTutorialStep.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 11 DropTailQueueTutorialStep.collector dataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "data rate"
+attr unit bps
+vector 12 DropTailQueueTutorialStep.collector meanBitLifeTimePerPacket:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled)))
+attr title "mean bit life time per packet"
+attr unit s
+vector 13 DropTailQueueTutorialStep.collector packetJitter:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source jitter(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled))))
+attr title "packet jitter"
+attr unit s
+vector 14 DropTailQueueTutorialStep.collector packetDelayDifferenceToMean:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source differenceToMean(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled))))
+attr title "packet delay difference to mean"
+attr unit s
+vector 15 DropTailQueueTutorialStep.collector packetDelayVariation:vector ETV
+attr recordingmode vector
+attr source stddev(weightedMeanPerGroup(groupRegionsPerPacket(lifeTimePerRegion(packetPulled))))
+attr title "packet delay variation"
+attr unit s
+vector 16 DropTailQueueTutorialStep.collector droppedDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetDropped)
+attr title "dropped data rate"
+attr unit bps
+vector 17 DropTailQueueTutorialStep.queue droppedPacketLengthsQueueOverflow:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow"
+attr unit b
+10	5145 535766 2 5796 0.1 3276.8 32768 0 240 212320 18112000
+11	540911 535766 2 5796 0.1 3276.8 32768 0 240 212320 18112000
+16	1076677 535766 2 5796 0.1 3276.8 32768 0 240 212320 18112000
+8	1612443 503483 1 5798 0.1 3276.8 32768 0 240 251440 21971200
+9	2115926 503483 1 5798 0.1 3276.8 32768 0 240 251440 21971200
+8	2619409 531780 5798 11915 3276.9 6553.6 32768 0 240 268640 23961600
+9	3151189 531780 5798 11915 3276.9 6553.6 32768 0 240 268640 23961600
+10	3682969 563973 5796 11918 3276.9 6553.6 32768 0 240 220880 18848000
+11	4246942 563973 5796 11918 3276.9 6553.6 32768 0 240 220880 18848000
+16	4810915 563973 5796 11918 3276.9 6553.6 32768 0 240 220880 18848000
+8	5374888 553802 11916 18057 6553.7 9830.4 32768 0 240 264320 23206400
+9	5928690 553802 11916 18057 6553.7 9830.4 32768 0 240 264320 23206400
+10	6482492 586106 11918 18057 6553.7 9830.4 32768 0 240 226960 19283200
+11	7068598 586106 11918 18057 6553.7 9830.4 32768 0 240 226960 19283200
+16	7654704 586106 11918 18057 6553.7 9830.4 32768 0 240 226960 19283200
+8	8240810 584825 18057 24060 9830.5 13107.2 32768 0 240 260480 23129600
+9	8825635 584825 18057 24060 9830.5 13107.2 32768 0 240 260480 23129600
+10	9410460 617088 18057 24062 9830.5 13107.2 32768 0 240 219840 18752000
+11	10027548 617088 18057 24062 9830.5 13107.2 32768 0 240 219840 18752000
+16	10644636 617088 18057 24062 9830.5 13107.2 32768 0 240 219840 18752000
+8	11261724 586607 24060 30225 13107.3 16384 32768 0 240 267120 23340800
+9	11848331 586607 24060 30225 13107.3 16384 32768 0 240 267120 23340800
+10	12434938 618861 24062 30225 13107.3 16384 32768 0 240 226000 19411200
+11	13053799 618861 24062 30225 13107.3 16384 32768 0 240 226000 19411200
+16	13672660 618861 24062 30225 13107.3 16384 32768 0 240 226000 19411200
+6	14291521 918232 0 36179 0 19642.03430443658 32768 0 4 65007 194309
+7	15209753 937776 0 36179 0 19642.03430443658 32768 0 32 520056 12435776
+8	16147529 586553 30225 36214 16384.1 19660.8 32768 0 240 262720 23168000
+9	16734082 586553 30225 36214 16384.1 19660.8 32768 0 240 262720 23168000
+10	17320635 618746 30225 36215 16384.1 19660.8 32768 0 160 216480 18432000
+11	17939381 618746 30225 36215 16384.1 19660.8 32768 0 160 216480 18432000
+16	18558127 618746 30225 36215 16384.1 19660.8 32768 0 160 216480 18432000
+0	19176873 599366 0 39310 0 21393.207088708145 21339 8 8 170712 1365696
+1	19776239 599366 0 39310 0 21393.207088708145 21339 8 8 170712 1365696
+2	20375605 688326 0 39310 0 21393.207088708145 17973 0 13.385481069489 34779.507403474 134592.60753678
+3	21063931 504814 0 39310 0 21393.207088708145 17973 8 8 143784 1150272
+4	21568745 504814 0 39310 0 21393.207088708145 17973 8 8 143784 1150272
+5	22073559 504814 0 39310 0 21393.207088708145 17973 8 8 143784 1150272
+6	22578373 80980 36180 39310 19642.503403642935 21393.207088708145 2804 0 4 5154 15076
+7	22659353 82513 36180 39310 19642.503403642935 21393.207088708145 2804 0 32 41232 964864
+8	22741866 310018 36214 39310 19660.9 21393.2 17324 0 240 132320 11545600
+9	23051884 310018 36214 39310 19660.9 21393.2 17324 0 240 132320 11545600
+10	23361902 327130 36215 39310 19660.9 21393.2 17324 0 240 115280 9888000
+11	23689032 327130 36215 39310 19660.9 21393.2 17324 0 240 115280 9888000
+12	24016162 706273 2 39310 0 21392.442945992368 17972 0 13.385481069489 34779.507403474 134592.60753678
+13	24722435 737933 2 39310 0 21392.442945992368 17972 -8.325309683465 9.211672065038 -1.1546319456102e-14 30473.34564424
+14	25460368 786856 2 39310 0 21392.442945992368 17972 -11.350554605676 2.0561063465483 -93.393517435498 67263.449474637
+15	26247224 772415 2 39310 0 21392.442945992368 17972 0 2.0046354759943 34608.647309396 66798.505031181
+16	27019639 327130 36215 39310 19660.9 21393.2 17324 0 240 115280 9888000
+17	27346769 97938 97 39302 57.572590633158 21387.756751254085 3366 8 8 26928 215424
+8	27444707 42 39310 39310 21393.207088708145 21393.207088708145 1 1128.555420305 1128.555420305 1128.555420305 1273637.3366998
+9	27444749 42 39310 39310 21393.207088708145 21393.207088708145 1 1128.555420305 1128.555420305 1128.555420305 1273637.3366998
+10	27444791 43 39310 39310 21393.207088708145 21393.207088708145 1 1128.555420305 1128.555420305 1128.555420305 1273637.3366998
+11	27444834 43 39310 39310 21393.207088708145 21393.207088708145 1 1128.555420305 1128.555420305 1128.555420305 1273637.3366998
+16	27444877 43 39310 39310 21393.207088708145 21393.207088708145 1 1128.555420305 1128.555420305 1128.555420305 1273637.3366998
+

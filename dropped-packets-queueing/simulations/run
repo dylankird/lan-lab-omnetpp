@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/dropped_packets_queueing -n .:../src $*
+# for shared lib, use: opp_run -l ../src/dropped_packets_queueing -n .:../src $*
