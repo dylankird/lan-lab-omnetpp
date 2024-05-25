@@ -9,16 +9,16 @@ import inet.queueing.source.ActivePacketSource;
 
 network DropTailQueueTutorialStep
 {
-    @display("bgb=700,200");
+    @display("bgb=1001,200");
     submodules:
         producer: ActivePacketSource {
-            @display("p=100,100");
+            @display("p=147,100");
         }
         queue: DropTailQueue {
-            @display("p=325,100");
+            @display("p=520,100");
         }
         collector: ActivePacketSink {
-            @display("p=550,100");
+            @display("p=864,100");
         }
     connections allowunconnected:
         producer.out --> queue.in;

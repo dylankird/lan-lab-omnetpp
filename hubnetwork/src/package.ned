@@ -1,0 +1,3 @@
+package hubnetwork;
+
+@license(LGPL);
